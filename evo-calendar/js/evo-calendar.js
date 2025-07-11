@@ -1029,44 +1029,51 @@
         }
     };
 
-    // v1.0.0 - Add Calendar Event(s)
+    // v1.1.0 - Add Calendar Event(s)-PAG
     EvoCalendar.prototype.addCalendarEvent = function(arr) {
         var _ = this;
 
-        function addEvent(data) {
-            if(!data.id) {
-                console.log("%c Event named: \""+data.name+"\" doesn't have a unique ID ", "color:white;font-weight:bold;background-color:#e21d1d;");
-            }
+       function addEvent(data) {
+    if (!data.id) {
+        console.log("%c Event named: \"" + data.name + "\" doesn't have a unique ID ", "color:white;font-weight:bold;background-color:#e21d1d;");
+    }
 
-            if (data.date instanceof Array) {
-                for (var j=0; j < data.date.length; j++) {
-                    if(isDateValid(data.date[j])) {
-                        data.date[j] = _.formatDate(new Date(data.date[j]), _.options.format);
-                    }
-                }
-            } else {
-                if(isDateValid(data.date)) {
-                    data.date = _.formatDate(new Date(data.date), _.options.format);
-                }
-            }
-            
-            if (!_.options.calendarEvents) _.options.calendarEvents = [];
-            _.options.calendarEvents.push(data);
-            // add to date's indicator
-            _.addEventIndicator(data);
-            // add to event list IF active.event_date === data.date
-            if (_.$active.event_date === data.date) _.addEventList(data);
-            // _.$elements.innerEl.find("[data-date-val='" + data.date + "']")
+    // NEW: Support startDate and endDate
+    if (data.startDate && data.endDate && !data.date) {
+        data.date = [data.startDate, data.endDate];
+    }
 
-            function isDateValid(date) {
-                if(_.isValidDate(date)) {
-                    return true;
-                } else {
-                    console.log("%c Event named: \""+data.name+"\" has invalid date ", "color:white;font-weight:bold;background-color:#e21d1d;");
-                }
-                return false;
+    if (data.date instanceof Array) {
+        for (var j = 0; j < data.date.length; j++) {
+            if (isDateValid(data.date[j])) {
+                data.date[j] = _.formatDate(new Date(data.date[j]), _.options.format);
             }
         }
+    } else {
+        if (isDateValid(data.date)) {
+            data.date = _.formatDate(new Date(data.date), _.options.format);
+        }
+    }
+
+    if (!_.options.calendarEvents) _.options.calendarEvents = [];
+    _.options.calendarEvents.push(data);
+
+    // add to date's indicator
+    _.addEventIndicator(data);
+
+    // add to event list IF active.event_date === data.date
+    if (_.$active.event_date === data.date) _.addEventList(data);
+
+    function isDateValid(date) {
+        if (_.isValidDate(date)) {
+            return true;
+        } else {
+            console.log("%c Event named: \"" + data.name + "\" has invalid date ", "color:white;font-weight:bold;background-color:#e21d1d;");
+        }
+        return false;
+    }
+}
+
         if (arr instanceof Array) { // Arrays of events
             for(var i=0; i < arr.length; i++) {
                 addEvent(arr[i])
