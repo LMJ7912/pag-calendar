@@ -32,11 +32,8 @@ pag-calendar/
 
 ### 1. Include Required Files
 
-<!-- CSS -->
-<link rel="stylesheet" href="https://lmj7912.github.io/pag-calendar2/css/pag-calendar.min.css" />
+- <link rel="stylesheet" href="https://lmj7912.github.io/pag-calendar2/css/pag-calendar.min.css" />
 
-<!-- Dependencies -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- JS -->
-<script src="https://lmj7912.github.io/pag-calendar2/js/pag-calendar.min.js"></script>
+- <script src="https://lmj7912.github.io/pag-calendar2/js/pag-calendar.min.js"></script>
