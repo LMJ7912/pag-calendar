@@ -3,7 +3,7 @@
  *
  * Licensed under the MIT License
  *
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: Edlyn Villegas
  * Docs: https://edlynvillegas.github.com/evo-calendar
  * Repo: https://github.com/edlynvillegas/evo-calendar
@@ -43,11 +43,11 @@ input:focus, textarea:focus, button:focus {
     width: 200px;
     height: 100%;
     float: left;
-    background-color: #8773c1;
+    background-color: #f5f5f5;
     color: #fff;
     z-index: 1;
-    -webkit-box-shadow: 5px 0 18px -3px #8773c1;
-            box-shadow: 5px 0 18px -3px #8773c1;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
@@ -73,16 +73,17 @@ input:focus, textarea:focus, button:focus {
     -webkit-transform: translate(100%, 0);
         -ms-transform: translate(100%, 0);
             transform: translate(100%, 0);
-    background-color: #8773c1;
+    background-color: #f5f5f5;
     padding: 10px 8px;
     cursor: pointer;
-    -webkit-box-shadow: 5px 0 18px -3px #8773c1;
-            box-shadow: 5px 0 18px -3px #8773c1;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .calendar-sidebar > .calendar-year {
     padding: 20px;
     text-align: center;
+    color: #000;
 }
 .calendar-sidebar > .calendar-year > p {
     margin: 0;
@@ -125,6 +126,7 @@ input:focus, textarea:focus, button:focus {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: #000;
 }
 .calendar-sidebar > .month-list > .calendar-months > li {
     padding: 7px 30px;
@@ -132,10 +134,12 @@ input:focus, textarea:focus, button:focus {
     font-size: 16px;
 }
 .calendar-sidebar > .month-list > .calendar-months > li:hover {
-    background-color: #a692e0;
+    background-color: #d4e0ee;
+    color: #000;
 }
 .calendar-sidebar > .month-list > .calendar-months > li.active-month {
-    background-color: #755eb5;
+    background-color: #d4e0ee;
+    color: #000;
 }
 
 .calendar-inner {
@@ -146,8 +150,6 @@ input:focus, textarea:focus, button:focus {
     max-width: calc(100% - 600px);
     margin-left: 200px;
     background-color: #fff;
-    -webkit-box-shadow: 5px 0 18px -3px rgba(0, 0, 0, 0.15);
-            box-shadow: 5px 0 18px -3px rgba(0, 0, 0, 0.15);
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
@@ -187,7 +189,7 @@ th[colspan="7"] {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 30px;
-    color: #8773c1;
+    color: #2c68b5;
 }
 th[colspan="7"]::after {
     content: '';
@@ -199,7 +201,7 @@ th[colspan="7"]::after {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    background-color: rgba(135, 115, 193, 0.15);
+    background-color: #2c68b5;
 }
 tr.calendar-header {
 
@@ -318,12 +320,12 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty {
     padding: 15px 10px;
-    background-color: rgba(135,115,193,.15);
-    border: 1px solid #8773c1;
+    background-color: rgba(44 104 181 / 19%);
+    border: 1px solid #2c68b5;
 }
 .event-list > .event-empty > p {
     margin: 0;
-    color: #755eb5;
+    color: #2c68b5;
 }
 .event-container {
     position: relative;
@@ -400,12 +402,14 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-container > .event-info > p {
     margin: 0;
-    color: #5a5a5a;
+    color: #000;
 }
 .event-container > .event-info > p.event-title {
     position: relative;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
+    overflow: visible;
+    text-overflow: unset;
 }
 .event-container > .event-info > p.event-title > span {
     position: absolute;
@@ -513,8 +517,8 @@ button.icon-button > span.chevron-arrow-left {
 }
 button.icon-button > span.chevron-arrow-right {
     display: block;
-    border-right: 4px solid #fff;
-    border-bottom: 4px solid #fff;
+    border-right: 4px solid #000;
+    border-bottom: 4px solid #000;
     width: 16px;
     height: 16px;
     -webkit-transform: rotate(-45deg);
@@ -573,6 +577,7 @@ button.icon-button > span.chevron-arrow-right {
         height: 45px;
         width: 45px;
         font-size: 16px;
+        color: #000;
     }
     .event-indicator > .type-bullet > div {
         width: 8px;
@@ -593,10 +598,12 @@ button.icon-button > span.chevron-arrow-right {
     }
     button.icon-button > span.bars {
         height: 5px;
+        background-color: #000;
     }
     button.icon-button > span.bars::before,
     button.icon-button > span.bars::after {
         height: 5px;
+        background-color: #000;
     }
     button.icon-button > span.bars::before {
         top: -10px;
@@ -771,8 +778,8 @@ button.icon-button > span.chevron-arrow-right {
         padding: 10px 20px;
         text-align: center;
         background-color: #8773c1;
-        -webkit-box-shadow: 0 3px 8px -3px rgba(53, 43, 80, 0.65);
-                box-shadow: 0 3px 8px -3px rgba(53, 43, 80, 0.65);
+        -webkit-box-shadow: none;
+                box-shadow: none;
     }
     .calendar-sidebar > .calendar-year > button.icon-button {
         width: 14px;
@@ -791,7 +798,7 @@ button.icon-button > span.chevron-arrow-right {
         width: 100%;
         height: calc(100% - 43px);
         overflow-y: auto;
-        background-color: #8773c1;
+        background-color: #2c68b5;
         -webkit-transform: translateY(0);
             -ms-transform: translateY(0);
                 transform: translateY(0);
