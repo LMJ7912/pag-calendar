@@ -32,7 +32,6 @@ pag-calendar/
 
 ### 1. Include Required Files
 
-```html
 <!-- CSS -->
 <link rel="stylesheet" href="https://lmj7912.github.io/pag-calendar2/css/pag-calendar.min.css" />
 
