@@ -1,4 +1,4 @@
-# Pag Calendar (Custom Evo Calendar)
+# Pag Calendar
 
 This is a customized version of the [Evo Calendar](https://github.com/edlynvillegas/evo-calendar) JavaScript event calendar.  
 Modified and maintained by [LMJ7912](https://github.com/LMJ7912) for integration with WordPress and custom use cases.
