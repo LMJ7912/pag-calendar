@@ -485,12 +485,12 @@ tr.calendar-body .calendar-day .day[disabled] {
   background-color: #002C57 !important;
 }
 
-.event-container > .event-icon > div.event-bullet-GTA,
+.event-container > .event-icon > div.event-bullet-GROUP,
 .event-indicator > .type-bullet > div.type-GROUP {
   background-color: #0668B3 !important;
 }
 
-.event-container > .event-icon > div.event-bullet-WEST,
+.event-container > .event-icon > div.event-bullet-MUSKOKA,
 .event-indicator > .type-bullet > div.type-MUSKOKA {
   background-color: #172815 !important;
 }
