@@ -474,6 +474,26 @@ tr.calendar-body .calendar-day .day[disabled] {
     background-color: #3ca8ff;
 }
 
+/* Custom event type colors */
+.event-container > .event-icon > div.event-bullet-GTA,
+.event-indicator > .type-bullet > div.type-GTA {
+  background-color: #E3173E !important;
+}
+
+.event-container > .event-icon > div.event-bullet-WEST,
+.event-indicator > .type-bullet > div.type-WEST {
+  background-color: #002C57 !important;
+}
+
+.event-container > .event-icon > div.event-bullet-GTA,
+.event-indicator > .type-bullet > div.type-GROUP {
+  background-color: #0668B3 !important;
+}
+
+.event-container > .event-icon > div.event-bullet-WEST,
+.event-indicator > .type-bullet > div.type-MUSKOKA {
+  background-color: #172815 !important;
+}
 
 button.icon-button {
     border: none;
